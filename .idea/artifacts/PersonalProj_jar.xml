@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact name="PersonalProj:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PersonalProj_jar</output-path>
+    <root id="root">
+      <element id="archive" name="PersonalProj.jar">
+        <element id="module-output" name="PersonalProj" />
+      </element>
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:mac-aarch64:17.0.2" />
+      <element id="library" level="project" name="postgresql-42.7.3" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:17.0.2" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:17.0.2" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:mac-aarch64:17.0.2" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:mac-aarch64:17.0.2" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:mac-aarch64:17.0.2" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:17.0.2" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:17.0.2" />
+    </root>
+  </artifact>
+</component>

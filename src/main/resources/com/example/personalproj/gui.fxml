@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.personalproj.GuiController">
+   <children>
+      <TabPane fx:id="tabs" prefHeight="400.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="loginTab" text="Login">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="220.0" layoutY="14.0" text="Welcome, Please Login">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="user" layoutX="222.0" layoutY="44.0" promptText="Username" />
+                        <Button fx:id="sub" layoutX="274.0" layoutY="114.0" mnemonicParsing="false" text="Submit" />
+                        <PasswordField fx:id="pass" layoutX="222.0" layoutY="80.0" promptText="Password" />
+                        <Text fx:id="incorrect" fill="RED" layoutX="208.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username or Password is incorrect" visible="false" />
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+          <Tab fx:id="addTab" disable="true" text="Add Patient">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="FName" layoutX="14.0" layoutY="14.0" promptText="First Name" />
+                        <TextField fx:id="LName" layoutX="14.0" layoutY="46.0" promptText="Last Name" />
+                        <Button fx:id="subPat" layoutX="14.0" layoutY="227.0" mnemonicParsing="false" text="Submit Patient Data" />
+                        <DatePicker fx:id="date" layoutX="14.0" layoutY="79.0" prefHeight="26.0" prefWidth="160.0" promptText="Birthday" />
+                        <TextField fx:id="height" layoutX="14.0" layoutY="148.0" prefHeight="26.0" prefWidth="159.0" promptText="Height 5, 6" />
+                        <TextField fx:id="weight" layoutX="14.0" layoutY="113.0" promptText="Weight (lbs)" />
+                        <TextArea fx:id="allergies" layoutX="303.0" layoutY="42.0" prefHeight="112.0" prefWidth="200.0" promptText="Ex: Peanut Butter, Cats" />
+                        <Label layoutX="375.0" layoutY="8.0" prefHeight="19.0" prefWidth="61.0" text="Allergies">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="341.0" layoutY="25.0" prefHeight="17.0" prefWidth="129.0" text="Seperated by commas" wrapText="true">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="368.0" layoutY="167.0" prefHeight="19.0" prefWidth="76.0" text="Conditions">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="341.0" layoutY="184.0" prefHeight="17.0" prefWidth="129.0" text="Seperated by commas" wrapText="true">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="conditions" layoutX="306.0" layoutY="203.0" prefHeight="112.0" prefWidth="200.0" promptText="Ex: Glaucoma, Leukemia" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="plookup" disable="true" text="Patient Lookup">
+              <content>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="606.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Patient Search">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="FNameS" layoutX="14.0" layoutY="38.0" prefWidth="160.0" promptText="First Name" />
+                        <TextField fx:id="LNameS" layoutX="14.0" layoutY="70.0" promptText="Last Name" />
+                        <DatePicker fx:id="dateS" layoutX="14.0" layoutY="107.0" prefHeight="26.0" prefWidth="160.0" promptText="Birthday" />
+                        <Button fx:id="searchPat" layoutX="37.0" layoutY="143.0" mnemonicParsing="false" text="Search for Patient" />
+                        <AnchorPane fx:id="patInfo" layoutX="237.0" layoutY="1.0" prefHeight="464.0" prefWidth="349.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="24.0" prefHeight="19.0" prefWidth="64.0" text="Name:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="showName" layoutX="95.0" layoutY="14.0" prefHeight="19.0" prefWidth="171.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="50.0" prefHeight="19.0" prefWidth="64.0" text="Birthday:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="showBirthday" layoutX="95.0" layoutY="50.0" prefHeight="19.0" prefWidth="189.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="81.0" prefHeight="19.0" prefWidth="64.0" text="Height:">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="showHeight" layoutX="95.0" layoutY="81.0" prefHeight="19.0" prefWidth="83.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="110.0" prefHeight="19.0" prefWidth="64.0" text="Weight:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="showWeight" layoutX="95.0" layoutY="110.0" prefHeight="19.0" prefWidth="83.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="144.0" layoutY="197.0" prefHeight="19.0" prefWidth="69.0" text="Conditions">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ListView fx:id="condList" layoutX="83.0" layoutY="224.0" prefHeight="160.0" prefWidth="186.0" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="77.0" layoutY="197.0" prefHeight="19.0" prefWidth="57.0" text="Allergies">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="allergList" layoutX="14.0" layoutY="224.0" prefHeight="160.0" prefWidth="186.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="logout" contentDisplay="CENTER" layoutX="529.0" layoutY="1.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" text="Logout" visible="false" />
+      <Label fx:id="curUser" layoutX="365.0" prefHeight="30.0" prefWidth="153.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
