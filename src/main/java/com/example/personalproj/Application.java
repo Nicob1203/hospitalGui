@@ -7,6 +7,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.scene.*;
+import java.sql.Date;
 
 import java.io.IOException;
 import java.sql.*;
@@ -75,13 +76,15 @@ public class Application extends javafx.application.Application {
 
     public void searchPatient(patient p, GuiController control)
     {
-        String sql = "";
         ResultSet rs = null;
         PreparedStatement ps = null;
         try{
             if(p.lName!=null && p.fName!=null && p.birthday!=null){
-                sql = "SELECT height, weight, allergies, conditions FROM patients WHERE firstname = \'" + p.fName + "\' AND lastname = \'" + p.lName + "\' AND birthday = \'" + p.birthday + "\'";
+                String sql = "SELECT height, weight, allergies, conditions FROM patients WHERE firstname = ? AND lastname = ? AND birthday = ?";
                 ps = connection.prepareStatement(sql);
+                ps.setString(1, p.fName);
+                ps.setString(2, p.lName);
+                ps.setDate(3, Date.valueOf(p.birthday));
                 rs = ps.executeQuery();
                 if(rs.next())
                 {
@@ -101,7 +104,6 @@ public class Application extends javafx.application.Application {
                     for(String s: allergyList)
                         control.allergList.getItems().add(s.trim());
                 }
-
                 if(p.conditions!=null){
                     String[] conditionList = p.conditions.split(",");
                     for(String s: conditionList)
@@ -116,33 +118,23 @@ public class Application extends javafx.application.Application {
     }
     public void addPatient(patient p)
     {
-        String sql = "";
         ResultSet rs = null;
         PreparedStatement ps = null;
         try{
             if(p.lName!=null && p.fName!=null && p.birthday!=null){
-                String sqlInsert = "INSERT INTO patients(patientid, firstname, lastname, birthday";
-                String sqlValues = " VALUES(DEFAULT, \'" + p.fName + "\', \'" + p.lName + "\', \'" + p.birthday + "\'";
-                if(p.height!=null){
-                    sqlInsert+=", height";
-                    sqlValues+=", \'" + p.height + "\'";}
-                if(p.weight!=null)
-                {
-                    sqlInsert+=", weight";
-                    sqlValues+=", \'" + p.weight + "\'";
-                }
-                if(p.allergies!=null)
-                {
-                    sqlValues+=", \'" + p.allergies + "\'";
-                    sqlInsert+=", allergies";
-                }
-                if(p.conditions!=null)
-                {
-                    sqlInsert+=", conditions";
-                    sqlValues+=", \'" + p.conditions + "\'";
-                }
-                sql = sqlInsert +")" + sqlValues + ")";
+                String sql = "INSERT INTO patients(patientid, firstname, lastname, birthday, height, weight, allergies, conditions) VALUES(DEFAULT, ?, ?, ?, ?, ?, ?, ?);";
                 ps = connection.prepareStatement(sql);
+                ps.setString(1, p.fName);
+                ps.setString(2, p.lName);
+                ps.setDate(3, Date.valueOf(p.birthday));
+                if(p.height!=null)
+                    ps.setString(4, p.height);
+                if(p.weight!=null)
+                    ps.setDouble(5, Double.parseDouble(p.weight));
+                if(p.allergies!=null)
+                    ps.setString(6, p.allergies);
+                if(p.conditions!=null)
+                    ps.setString(7, p.conditions);
                 rs = ps.executeQuery();
             }
 
