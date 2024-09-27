@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Java-based application allows healthcare professionals to manage patient data efficiently. It provides a graphical user interface (GUI) for adding new patients, viewing their medical records, and searching for patients based on their personal information (first name, last name, date of birth). The application focuses on user-friendly input of patient details, such as height, weight, allergies, and medical conditions.
+This Java-based application allows healthcare professionals to manage patient data efficiently. It provides a graphical user interface (GUI) for adding new patients and viewing patient's medical records through searching based on their personal information (first name, last name, date of birth). The application focuses on user-friendly input of patient details, such as height, weight, allergies, and medical conditions.
 
 ## Features
 
