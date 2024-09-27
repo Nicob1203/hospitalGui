@@ -47,5 +47,3 @@ This file facilitates the launching of the GUI and controls the execution flow o
   ```bash
   java -jar PatientManagementApp.jar
 
-# WIP
-## Deletion of a Patient from the Database
