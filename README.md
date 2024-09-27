@@ -15,9 +15,9 @@ This Java-based application allows healthcare professionals to manage patient da
   - Allergies (comma-separated)
   - Medical conditions (comma-separated)
   
-- **Patient Lookup**: Users can search for an existing patient using their first name, last name, and date of birth. The search retrieves and displays the patient's details, including allergies and medical conditions.
+- **Patient Lookup**: Users can search for an existing patient using their first name, last name, and date of birth. The search retrieves and displays all of the patient's details.
 
-- **Data Submission**: Inputted patient data is submitted and stored for future retrieval.
+- **Data Submission**: Inputted patient data is submitted and stored in a Postgres database for future retrieval.
 
 - **User Logout**: The application allows users to log out, returning them to the login screen.
 
