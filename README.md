@@ -36,6 +36,9 @@ This file facilitates the launching of the GUI and controls the execution flow o
 
 ## How to Use
 
+### Username: john
+### Password: password
+
 ### 1. Launching the Application
 
 - A pre-built `.jar` file is included in this repository, making it easy to launch the application without the need for compiling the source code or using the command line.
